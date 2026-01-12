@@ -1,0 +1,179 @@
+---
+title: Integrations and Automation
+description: Connect Ranked AI with external tools to enhance your documentation process through seamless integrations and webhooks.
+---
+
+## Overview
+
+Ranked AI supports seamless integrations with popular third-party tools, Git repositories, webhooks, and custom API endpoints. You can automate documentation workflows, sync content from Git, receive real-time updates via webhooks, and build custom solutions using our API. Start by exploring the available connections below.
+
+<Columns cols={3}>
+  <Card title="Third-Party Apps" icon="plug" href="#third-party">
+    Connect to Slack, Discord, and Zapier.
+  </Card>
+  <Card title="Git Sync" icon="git-branch" href="#git-sync">
+    Keep docs in sync with your repositories.
+  </Card>
+  <Card title="Webhooks" icon="zap" href="#webhooks">
+    Trigger actions on doc updates.
+  </Card>
+</Columns>
+
+## Third-Party App Connections
+
+Connect Ranked AI to external services for notifications and automation.
+
+<Callout kind="tip">
+  Visit the [Integrations Dashboard](https://dashboard.example.com/integrations) to enable apps.
+</Callout>
+
+Use the dashboard to authorize connections. Supported apps include:
+
+| App       | Use Case                  | Setup Time |
+|-----------|---------------------------|------------|
+| Slack     | Doc update notifications | 2 minutes |
+| Zapier    | Custom workflows         | 5 minutes |
+| Discord   | Team alerts              | 3 minutes |
+
+## Git Repository Syncing
+
+Sync your documentation directly from GitHub, GitLab, or Bitbucket repositories.
+
+### Prerequisites
+
+Ensure your repo contains Markdown files in a `docs/` folder.
+
+<Steps>
+  <Step title="Connect Repository" icon="git-branch">
+    Navigate to `https://dashboard.example.com/repos` and click "Add Repository".
+  </Step>
+  <Step title="Authorize Access">
+    Grant Ranked AI read access to your repo.
+  </Step>
+  <Step title="Configure Sync">
+    Set sync interval (e.g., every `{5}` minutes) and branch (e.g., `main`).
+  </Step>
+  <Step title="Trigger Initial Sync">
+    Click "Sync Now" to import files.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="GitHub,GitLab">
+  ```yaml
+  # .rankedai.yml in repo root
+  sync:
+    branch: main
+    path: docs/
+    exclude: ["*.pdf"]
+  ```
+  ```yaml
+  # GitLab CI example
+  sync_docs:
+    script:
+      - curl -X POST https://api.example.com/v1/repos/sync \
+        -H "Authorization: Bearer YOUR_TOKEN" \
+        -d '{"repo": "your/repo"}'
+  ```
+</CodeGroup>
+
+## Webhook Configuration
+
+Set up webhooks to receive events like document updates or new versions.
+
+<Tabs>
+  <Tab title="Dashboard Setup" icon="settings">
+    1. Go to `https://dashboard.example.com/webhooks`.
+    2. Add your webhook URL (e.g., `https://your-webhook-url.com/rankedai`).
+    3. Select events: `doc.updated`, `doc.published`.
+
+    Test with the "Send Test Payload" button.
+  </Tab>
+  <Tab title="Payload Example" icon="code">
+    ```json
+    {
+      "event": "doc.updated",
+      "doc_id": "doc_123abc",
+      "timestamp": "2024-10-15T10:30:00Z",
+      "changes": {
+        "title": "Updated Title",
+        "content": "Modified section"
+      }
+    }
+    ```
+  </Tab>
+</Tabs>
+
+<Callout kind="alert">
+  Secure your webhook endpoint with HMAC signatures using the `X-RankedAI-Signature` header.
+</Callout>
+
+## API Endpoints for Custom Integrations
+
+Build advanced integrations using Ranked AI's REST API at `https://api.example.com/v1`.
+
+<Request tabs="cURL,JavaScript" show-lines="true">
+  ```bash
+  curl -X POST https://api.example.com/v1/docs \
+    -H "Authorization: Bearer YOUR_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "title": "New Doc",
+      "content": "# Hello World"
+    }'
+  ```
+  ```javascript
+  const response = await fetch('https://api.example.com/v1/docs', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer YOUR_API_KEY',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      title: 'New Doc',
+      content: '# Hello World'
+    })
+  });
+  ```
+</Request>
+
+<Response tabs="200,400">
+  ```json
+  {
+    "id": "doc_123abc",
+    "title": "New Doc",
+    "status": "success"
+  }
+  ```
+  ```json
+  {
+    "error": "Invalid API key",
+    "code": 401
+  }
+  ```
+</Response>
+
+### Key Parameters
+
+<ParamField path="id" param-type="string" required="true">
+  Document unique identifier.
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token: `Bearer YOUR_API_KEY`.
+</ParamField>
+
+<ParamField body="content" param-type="string" required="false">
+  Markdown content for the document.
+</ParamField>
+
+## Next Steps
+
+Explore the [API Reference](/api-reference) for more endpoints or set up your first integration in the dashboard today. Use the `<Expandable>` below for troubleshooting common issues.
+
+<Expandable title="Common Issues" default-open="false">
+
+- **Sync fails**: Check repo permissions and `.rankedai.yml` syntax.
+- **Webhook not firing**: Verify your endpoint responds with `200 OK`.
+- **Rate limits**: API allows `{1000}` requests per minute.
+
+</Expandable>

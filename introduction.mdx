@@ -1,0 +1,126 @@
+---
+title: Introduction to Ranked AI
+description: Discover Ranked AI, a comprehensive platform for organizing and managing your project documentation with ease and efficiency.
+---
+
+## Overview
+
+Ranked AI provides a centralized platform where you organize, manage, and collaborate on all your project documentation. You create custom spaces for different projects, add markdown pages, and integrate with your workflows seamlessly. This documentation space serves as your hub for maintaining up-to-date guides, APIs, and notes.
+
+<Callout kind="info">
+Ranked AI supports unlimited projects and collaborators, with real-time editing and version history.
+</Callout>
+
+## Key Benefits
+
+You gain efficiency in documentation management through these core advantages:
+
+- **Centralized Organization**: Keep all docs in one searchable space.
+- **Collaboration Tools**: Invite teams for real-time edits and comments.
+- **Version Control**: Track changes with git-like history.
+- **Customizable Spaces**: Tailor layouts and permissions per project.
+
+## Main Features
+
+Explore the standout features that power Ranked AI:
+
+<Columns cols={3}>
+  <Card title="Project Spaces" icon="folder" href="#project-spaces">
+    Create dedicated spaces for each project. Organize pages hierarchically with drag-and-drop.
+  </Card>
+
+  <Card title="Real-time Collaboration" icon="users" href="#collaboration">
+    Edit documents simultaneously with others. See changes live and resolve conflicts easily.
+  </Card>
+
+  <Card title="Advanced Search" icon="search" href="#search">
+    Full-text search across all spaces. Filter by tags, dates, and authors.
+  </Card>
+
+  <Card title="API Integration" icon="code" href="#api">
+    Programmatically manage docs via REST API. Automate updates from CI/CD pipelines.
+  </Card>
+
+  <Card title="Version History" icon="git-branch" href="#history">
+    Revert changes, compare versions, and maintain audit trails.
+  </Card>
+
+  <Card title="Export & Embed" icon="share-2" href="#export">
+    Export to PDF, Markdown, or HTML. Embed docs in your apps or sites.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Get up and running in minutes:
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Visit `https://dashboard.rankedai.com` and sign up with your email.
+  </Step>
+
+  <Step title="New Space" icon="folder-plus">
+    Click "New Space" and name your project, e.g., "MyApp Docs".
+  </Step>
+
+  <Step title="Add Pages" icon="file-plus">
+    Create your first page with markdown. Use the editor for rich content.
+  </Step>
+
+  <Step title="Invite Team" icon="mail">
+    Share the space link or add collaborators via email.
+  </Step>
+</Steps>
+
+For API access, generate a key:
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  const response = await fetch('https://api.example.com/v1/spaces', {
+    headers: {
+      Authorization: `Bearer ${YOUR_API_KEY}`
+    }
+  });
+  const spaces = await response.json();
+  console.log(spaces);
+  ```
+
+  ```python
+  import requests
+
+  headers = {'Authorization': f'Bearer {YOUR_API_KEY}'}
+  response = requests.get('https://api.example.com/v1/spaces', headers=headers)
+  spaces = response.json()
+  print(spaces)
+  ```
+</CodeGroup>
+
+## Next Steps
+
+Dive deeper with these guides:
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="zap" href="/quickstart">
+    Set up your first full documentation workflow.
+  </Card>
+
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure API access and manage tokens.
+  </Card>
+
+  <Card title="Configuration" icon="settings" href="/configuration">
+    Customize your spaces and integrations.
+  </Card>
+
+  <Card title="Changelog" icon="git-commit" href="/changelog">
+    Stay updated with the latest releases.
+  </Card>
+</Columns>
+
+<Expandable title="Advanced: Custom Domains" default-open="false">
+  Connect your own domain to spaces for branded documentation. Configure via dashboard settings under "Domains".
+</Expandable>
+
+<Callout kind="tip">
+  Start with the Quickstart guide to build your first space. Need help? Check the [support docs](https://docs.example.com/support).
+</Callout>

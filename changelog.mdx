@@ -1,0 +1,120 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and bug fixes in Ranked AI to stay informed about new features.
+---
+
+## Recent Updates
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Added real-time ranking previews for AI models, allowing you to test rankings instantly.
+- Introduced webhook support for ranking events at `https://your-webhook-url.com/webhook`.
+- New dashboard analytics for model performance metrics.
+
+## Improvements
+
+- Enhanced API response times by 40% for high-volume ranking requests.
+- Updated SDKs with better TypeScript support.
+
+## Bug Fixes
+
+- Fixed intermittent failures in batch ranking endpoints.
+- Resolved authentication issues with long-lived tokens.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Launched multi-model ranking pipelines for hybrid AI workflows.
+- Added support for custom ranking criteria via `rankingCriteria` parameter.
+
+## Improvements
+
+- Optimized memory usage for large datasets in ranking computations.
+- Improved error messages for invalid model inputs.
+
+## Bug Fixes
+
+- Corrected pagination issues in dashboard listing views.
+- Fixed race conditions during concurrent ranking jobs.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Deprecated legacy `v1/rank` endpoint; migrate to `v2/rankings`.
+
+## New Features
+
+- Introduced AI model marketplace integration.
+- Added priority queues for urgent ranking tasks.
+
+## Improvements
+
+- Better handling of edge cases in ranking algorithms.
+
+## Bug Fixes
+
+- Patched security vulnerability in token validation (CVE-2024-XXXX).
+
+</Update>
+
+## Key Highlights
+
+<Columns cols={3}>
+  <Card title="Performance Boost" icon="zap" href="#recent-updates">
+    Experience up to 40% faster API responses in v1.3.0.
+  </Card>
+  <Card title="Webhook Integration" icon="github" href="https://dashboard.example.com/webhooks">
+    Receive instant notifications for ranking events.
+  </Card>
+  <Card title="SDK Updates" icon="code" href="/quickstart">
+    Updated SDKs with enhanced TypeScript definitions.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Check your dashboard at `https://dashboard.example.com` for personalized upgrade notes.
+</Callout>
+
+## How to Upgrade
+
+<Steps>
+  <Step title="Review Changes" icon="book-open">
+    Scan the updates above for breaking changes.
+  </Step>
+  <Step title="Update SDK" icon="download">
+    <CodeGroup tabs="npm,yarn">
+````bash
+npm install ranked-ai@latest
+````
+````bash
+yarn add ranked-ai@latest
+````
+    </CodeGroup>
+  </Step>
+  <Step title="Test Endpoints" icon="play-circle">
+    Verify your integration with `https://api.example.com/v2/rankings`.
+  </Step>
+</Steps>
+
+## Upcoming Features
+
+<Expandable title="Preview: Advanced Analytics" default-open="true">
+  Coming in v1.4.0: Interactive charts and A/B testing for ranking strategies.
+</Expandable>
+
+<Expandable title="Roadmap Details">
+  - Federated learning support for privacy-focused rankings.
+  - Native mobile SDKs for on-device AI ranking.
+</Expandable>
+
+<Callout kind="info">
+  Follow us on GitHub for beta access: https://github.com/ranked-ai/docs.
+</Callout>

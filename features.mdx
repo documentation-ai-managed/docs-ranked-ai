@@ -1,0 +1,123 @@
+---
+title: Core Features of Ranked AI
+description: Learn about the essential tools and capabilities in Ranked AI that help streamline your documentation workflow.
+---
+
+## Overview
+
+Ranked AI provides powerful tools to create, organize, collaborate on, and search your documentation efficiently. You manage everything from a central workspace, supporting teams of any size.
+
+<Columns cols={2}>
+  <Card title="Document Creation" icon="edit-3" href="#document-creation">
+    Build rich docs with markdown, components, and embeds.
+  </Card>
+  <Card title="Organization" icon="folder" href="#organization">
+    Use folders and tags to keep content structured.
+  </Card>
+  <Card title="Collaboration" icon="users" href="#collaboration">
+    Share, review, and co-edit with your team.
+  </Card>
+  <Card title="Search & Filter" icon="search" href="#search">
+    Find content instantly with advanced queries.
+  </Card>
+</Columns>
+
+## Document Creation and Editing
+
+Create new documents directly in your workspace. You support full MDX with custom components for interactive docs.
+
+<Steps>
+  <Step title="Create a New Document" icon="plus">
+    Navigate to your workspace and click the `+ New Document` button.
+    
+    Choose a template or start blank.
+  </Step>
+  <Step title="Edit with MDX" icon="edit">
+````markdown
+# Welcome
+
+Use **bold** and _italics_ for formatting.
+
+```javascript
+console.log("Hello, Ranked AI!");
+```
+````
+  </Step>
+  <Step title="Preview and Publish" icon="eye">
+    Toggle live preview and hit `Publish` to make it live.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable real-time preview to see changes instantly as you type.
+</Callout>
+
+## Organization with Folders and Tags
+
+Structure your docs using folders for hierarchy and tags for cross-referencing.
+
+<Tabs>
+  <Tab title="Folders" icon="folder">
+    Create nested folders for projects.
+    
+    ```
+    /docs
+    ├── /api
+    │   └── reference.mdx
+    └── /guides
+        └── quickstart.mdx
+    ```
+  </Tab>
+  <Tab title="Tags" icon="tag">
+    Assign multiple tags like `api`, `beta`, `internal`.
+    
+    Filter views by tags for quick access.
+  </Tab>
+</Tabs>
+
+## Collaboration and Sharing Options
+
+Invite team members and share docs securely. You control permissions at folder or document level.
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+// Generate shareable link via API
+const response = await fetch('https://api.example.com/v1/docs/{docId}/share', {
+  method: 'POST',
+  headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+  body: JSON.stringify({ permission: 'read' })
+});
+```
+```python
+import requests
+
+response = requests.post(
+    'https://api.example.com/v1/docs/{docId}/share',
+    headers={'Authorization': 'Bearer YOUR_API_KEY'},
+    json={'permission': 'read'}
+)
+```
+</CodeGroup>
+
+Use public links for external sharing or embed docs in your site.
+
+## Advanced Search and Filtering
+
+Search across all docs with full-text, tag, and folder filters.
+
+<Expandable title="Advanced Search Syntax" default-open="true">
+  Combine operators:
+  
+  | Query              | Matches                  |
+  |--------------------|--------------------------|
+  | `api`              | Docs containing "api"   |
+  | `tag:beta`         | Beta-tagged docs         |
+  | `folder:guides`    | Guides folder            |
+  | `"exact phrase"`   | Exact matches            |
+</Expandable>
+
+<Callout kind="info">
+  Pro tip: Pin frequent searches to your dashboard for one-click access.
+</Callout>
+
+These features make Ranked AI your go-to for scalable documentation. Start with [quickstart](/quickstart) to build your first doc.
