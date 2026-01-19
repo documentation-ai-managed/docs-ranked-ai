@@ -1,101 +1,34 @@
 ---
 title: Getting Started with Ranked AI
-description: Follow these steps to set up your account, create your first documentation space, and begin managing projects quickly.
+description: >-
+  Follow these steps to set up your account, create your first documentation
+  space, and begin managing projects quickly.
 ---
-
-## Prerequisites
-
-Before starting, ensure you have:
-
-<Callout kind="info">
-- A modern web browser like Chrome, Firefox, or Safari
-- An email address for account verification
-- Optional: Your `{API_KEY}` from previous integrations
-</Callout>
-
-<Callout kind="tip">
-Ranked AI works best on desktop for the initial setup.
-</Callout>
-
 ## Create Your Account and Log In
 
 Follow these steps to get your Ranked AI account up and running.
 
 <Steps>
-  <Step title="Visit the Dashboard" icon="monitor">
-    Navigate to `https://app.rankedai.com` and click **Sign Up**.
+  <Step title="Add Your First Project" icon="badge-plus-icon" title-type="p">
+    Navigate to <a href="https://app.ranked.ai/dashboard/projects/add" target="_blank" rel="noopener noreferrer">https\://app.ranked.ai/dashboard/projects/add</a> to select your service and add your details.
   </Step>
-  <Step title="Enter Details" icon="user">
-    Provide your email, create a strong password, and verify your account via email.
+
+  <Step title="Fill Out Onboarding" icon="user" title-type="p">
+    Provide your content and keyword preferences, connect your Google Search Console along with website access if you'd like us to handle implementation for you.
   </Step>
-  <Step title="Log In" icon="log-in">
-    Return to the dashboard, enter your credentials, and access the main interface.
+
+  <Step title="Wait For Our Plan" icon="timer-icon" title-type="p">
+    We'll get back to you in a few working days with a plan for your site along with the work schedule.
   </Step>
 </Steps>
 
-## Set Up Your First Documentation Space
+## Import From Other Providers
 
-Once logged in, create a space to organize your projects.
-
-<Steps>
-  <Step title="Create Space" icon="plus">
-    Click **New Space** in the sidebar and enter a name like "My Project Docs".
-  </Step>
-  <Step title="Configure Settings" icon="settings">
-    Set visibility to private or public, and add a description for your team.
-  </Step>
-  <Step title="Save and Enter" icon="check-circle">
-    Save the space and click **Enter** to view the editor.
-  </Step>
-</Steps>
-
-## Import Initial Documents
-
-Import your existing documents using one of these methods.
+If you'd like us to import your SEO data from other software or services.
 
 <Tabs>
   <Tab title="File Upload" icon="upload">
-    Drag and drop Markdown, PDF, or TXT files directly into the space editor.
-    
-    Supported formats include `.mdx`, `.md`, `.pdf` (up to 10MB per file).
-  </Tab>
-  <Tab title="API Import" icon="api">
-    Use the API to programmatically import content.
-    
-    <CodeGroup tabs="cURL,JavaScript">
-    ````bash
-    curl -X POST https://api.rankedai.com/v1/spaces/{SPACE_ID}/import \
-      -H "Authorization: Bearer YOUR_API_KEY" \
-      -H "Content-Type: application/json" \
-      -d '{
-        "url": "https://docs.example.com/my-doc.md",
-        "title": "Imported Document"
-      }'
-    ````
-    ````javascript
-    const response = await fetch(`https://api.rankedai.com/v1/spaces/${SPACE_ID}/import`, {
-      method: 'POST',
-      headers: {
-        'Authorization': 'Bearer YOUR_API_KEY',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        url: 'https://docs.example.com/my-doc.md',
-        title: 'Imported Document'
-      })
-    });
-    const data = await response.json();
-    console.log(data);
-    ````
-    </CodeGroup>
-
-    <ParamField path="SPACE_ID" param-type="string" required="true">
-      Your documentation space identifier.
-    </ParamField>
-
-    <ParamField header="Authorization" param-type="string" required="true">
-      Bearer token: `Bearer YOUR_API_KEY`.
-    </ParamField>
+    Share a ZIP with <a href="mailto:clients@ranked.ai" target="_blank" rel="noopener noreferrer">clients\@ranked.ai</a> and we'll get it uploaded for you.
   </Tab>
 </Tabs>
 
@@ -103,14 +36,16 @@ Import your existing documents using one of these methods.
 
 Explore the key areas of the Ranked AI interface.
 
-<Columns cols={3}>
-  <Card title="Editor" icon="edit-3" href="#editor">
+<Columns cols="3">
+  <Card title="Editor" href="#editor" icon="edit-3" horizontal="false">
     Write and preview MDX documentation in real-time.
   </Card>
-  <Card title="Spaces" icon="folder" href="#spaces">
+
+  <Card title="Spaces" href="#spaces" icon="folder" horizontal="false">
     Manage multiple documentation spaces and projects.
   </Card>
-  <Card title="Settings" icon="settings" href="#settings">
+
+  <Card title="Settings" href="#settings" icon="settings" horizontal="false">
     Configure API keys, themes, and collaboration.
   </Card>
 </Columns>
@@ -119,6 +54,7 @@ Explore the key areas of the Ranked AI interface.
 
 You now have a fully functional documentation space. Dive deeper with these resources:
 
-<Callout kind="success">
-Explore advanced features like collaboration and custom themes in the full documentation.
+<Callout kind="success" collapsed="false">
+  Explore advanced features like collaboration and custom themes in the full documentation.
 </Callout>
+
