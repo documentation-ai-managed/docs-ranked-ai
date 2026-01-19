@@ -3,10 +3,14 @@
   "initialRoute": "introduction",
   "colors": {
     "light": {
-      "brand": "#3B82F6"
+      "brand": "#1a1a1a",
+      "heading": "#1a1a1a",
+      "text": "#1a1a1a"
     },
     "dark": {
-      "brand": "#6ca1f8"
+      "brand": "#f2f2f2",
+      "heading": "#f2f2f2",
+      "text": "#c1c1c1"
     }
   },
   "navigation": {
@@ -121,5 +125,9 @@
         ]
       }
     ]
-  }
+  },
+  "template": "atlas",
+  "logo-dark": "https://blob-cdn.documentation.ai/org-43909e5d-ab9d-4e3f-b899-fa446356a70e/doc-29782f5c-e2a3-4799-afae-13d74228aa94/1768849761320-0zbqkexqjk5g-Ranked-AI.png?q=85&fm=auto&auto=compress%2Cformat",
+  "logo-light": "https://blob-cdn.documentation.ai/org-43909e5d-ab9d-4e3f-b899-fa446356a70e/doc-29782f5c-e2a3-4799-afae-13d74228aa94/1768849778591-z7xq23p6etd-Ranked-AI-4.png?q=85&fm=auto&auto=compress%2Cformat",
+  "favicon": "https://blob-cdn.documentation.ai/org-43909e5d-ab9d-4e3f-b899-fa446356a70e/doc-29782f5c-e2a3-4799-afae-13d74228aa94/1768849778591-z7xq23p6etd-Ranked-AI-4.png?q=85&fm=auto&auto=compress%2Cformat"
 }
